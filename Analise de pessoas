@@ -1,0 +1,49 @@
+
+#include <stdio.h>
+
+int main() {
+    char nomes[5][50];
+    int idades[5];
+    float alturas[5];
+    float soma = 0, media, percentual;
+    int menores = 0;
+    int i;
+
+    // Cadastro das pessoas
+    for (i = 0; i < 5; i++) {
+        printf("\nDigite o nome da pessoa: ");
+        scanf(" %49[^\n]", nomes[i]);
+
+        printf("Digite a idade: ");
+        scanf("%d", &idades[i]);
+
+        printf("Digite a altura: ");
+        scanf("%f", &alturas[i]);
+
+        soma = soma + alturas[i];
+
+        if (idades[i] < 16) {
+            menores++;
+        }
+    }
+
+    // Calcular a media das alturas
+    media = soma / 5;
+
+    // Calcular percentual de menores de 16 anos
+    percentual = (menores * 100.0) / 5;
+
+    // Exibir resultados
+    printf("\n--- RESULTADOS ---\n");
+
+    for (i = 0; i < 5; i++) {
+        printf("\nNome: %s", nomes[i]);
+        printf("\nIdade: %d", idades[i]);
+        printf("\nAltura: %.2f\n", alturas[i]);
+    }
+
+    printf("\nMedia das alturas: %.2f", media);
+    printf("\nPercentual de menores de 16 anos: %.2f%%", percentual);
+
+    return 0;
+}
