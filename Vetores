@@ -1,0 +1,22 @@
+
+#include <stdio.h>
+
+int main() {
+    int numeros[5];
+    int i;
+
+    // Ler os numeros
+    for (i = 0; i < 5; i++) {
+        printf("Digite o %d numero: ", i + 1);
+        scanf("%d", &numeros[i]);
+    }
+
+    // Exibir os numeros
+    printf("\nNumeros armazenados:\n");
+
+    for (i = 0; i < 5; i++) {
+        printf("%d\n", numeros[i]);
+    }
+
+    return 0;
+}
